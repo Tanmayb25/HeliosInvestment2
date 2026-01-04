@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { Calendar, Clock, Tag, User, Search, Filter, TrendingUp, BookOpen, DollarSign, Shield, PieChart, Target } from 'lucide-react';
 import BlogModal from '../components/BlogModal';
 import { sendToGoogleSheets, getConfiguredSheetName } from '../services/googleSheets';
+import mfimg from '../assets/blogimg/mutualfunds.jpg';
+import sipimg from '../assets/blogimg/sip.jpg';
+import mythimg from '../assets/blogimg/myth.jpg';
+import moneyimg from '../assets/blogimg/money.jpg';
+import financeimg from '../assets/blogimg/finance.jpg';
+import lifeimg from '../assets/blogimg/lifeinsurance.jpg';
 
 interface BlogPost {
   id: number;
@@ -28,88 +34,99 @@ const Blogs = () => {
   const blogPosts: BlogPost[] = [
     {
       id: 1,
-      title: "The Power of SIP: Building Wealth Through Systematic Investment",
-      excerpt: "Discover how Systematic Investment Plans can help you build substantial wealth over time through disciplined investing and the power of compounding.",
-      content: "Systematic Investment Plans (SIPs) have revolutionized the way Indians invest in mutual funds. By investing a fixed amount regularly, investors can benefit from rupee cost averaging and the power of compounding.\n\nWhen you invest through SIP, you buy more units when prices are low and fewer units when prices are high. This strategy helps reduce the average cost per unit over time, potentially leading to better returns in the long run.\n\nThe key advantages of SIP include:\n• Disciplined investing approach\n• Rupee cost averaging benefits\n• Power of compounding\n• Flexibility to start with small amounts\n• Easy to automate and maintain\n\nStarting early with SIP can make a significant difference. For example, if you start investing ₹5,000 per month at age 25 with an expected return of 12% annually, you could accumulate over ₹1.5 crore by age 60. However, if you start at age 35, you might only accumulate around ₹50 lakhs for the same monthly investment.\n\nThe beauty of SIP lies in its simplicity and effectiveness. You don't need to time the market or worry about market volatility. Just stay consistent with your investments and let time work in your favor.",
-      author: "Priya Sharma",
-      publishDate: "2024-01-15",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["SIP", "Mutual Funds", "Wealth Building"],
+      title: "FIRE Up Your Future: Can Mutual Funds Help You Retire Early?",
+      excerpt: "The idea of FIRE—Financial Independence, Retire Early—is catching on fast. But can mutual funds really fuel your journey to an early retirement? Let’s break it down.",
+      content: "Why Mutual Funds Are Your FIRE Ally? \n Mutual funds give you access to diversified investments managed by experts. While the traditional retirement age is around 60-65 years, F.I.R.E. followers aim to achieve financial independence much earlier, sometimes in their 40s or even 30s. They do this by carving out 50-70% of their income and investing that percentage wisely to grow their wealth faster. \n\n Follow the F.I.R.E. Rule to Retire Early \n✨F – Focus on Savings: Start with a high savings rate. Early retirement means building a larger corpus since your money needs to last longer.\n ✨I – Invest Smartly: Use SIPs in equity and debt mutual funds to grow your wealth consistently.\n ✨R – Review Regularly: Keep an eye on your portfolio and rebalance as needed to manage risk.\n ✨E – Enjoy the Power of Compounding: The earlier you start, the more your money grows exponentially.\n\n Bottom Line Mutual funds are not a magic wand, but with the right mix of equity and debt funds, a disciplined SIP approach, and a clear goal, they can help you achieve financial independence earlier than traditional retirement timelines.So, are you ready to let your money work as hard as you do? ",
+      author: "Vandita Sanghvi",
+      publishDate: "2025-01-15",
+      readTime: "2 min read",
+      image: mfimg,
+      tags: [ "Mutual Funds", "Wealth Building"],
       featured: true
     },
     {
       id: 2,
-      title: "Mutual Funds vs Fixed Deposits: Which is Better for Your Goals?",
-      excerpt: "A comprehensive comparison between mutual funds and fixed deposits to help you choose the right investment vehicle for your financial objectives.",
-      content: "When it comes to investment options, mutual funds and fixed deposits are among the most popular choices for Indian investors. While FDs offer safety and guaranteed returns, mutual funds provide the potential for higher growth.\n\nFixed Deposits (FDs) are known for their safety and predictable returns. They offer guaranteed interest rates and are backed by banks, making them virtually risk-free. However, the returns are typically lower, often just beating inflation.\n\nMutual funds, on the other hand, come with market-linked returns that can be significantly higher than FDs over the long term. They offer diversification across various asset classes and professional fund management.\n\nKey differences to consider:\n• Risk: FDs are low-risk, mutual funds have varying risk levels\n• Returns: FDs offer fixed returns, mutual funds have variable returns\n• Liquidity: FDs have lock-in periods, mutual funds offer better liquidity\n• Tax efficiency: Mutual funds can be more tax-efficient for long-term investments\n• Goal alignment: Choose based on your time horizon and risk appetite\n\nFor short-term goals (1-3 years), FDs might be more suitable. For long-term goals (5+ years), mutual funds could provide better wealth creation potential.",
-      author: "Rajesh Kumar",
-      publishDate: "2024-01-10",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["Mutual Funds", "Fixed Deposits", "Investment Comparison"],
+      title: "Your First SIP Is Like Hitting the Gym: Build Wealth One Step at a Time",
+      excerpt: "We’ve all heard it—“The hardest part of working out is showing up.” The same holds true for investing. Starting your first SIP (Systematic Investment Plan) can feel intimidating, but like your first workout, it’s the first step towards long-term health—this time, financial health.We believe building wealth is not about big leaps but small, consistent actions. Let’s break it down.",
+      content:"1️⃣ Starting Small is Powerful \nRemember your first day at the gym? You didn’t lift heavy weights or run a marathon. You started with lighter exercises, focusing on form and consistency. Similarly, your first SIP doesn’t have to be a large amount. Even ₹1,000 per month can set the foundation for your financial fitness.\nThe key is consistency. Over time, small SIPs grow with the power of compounding, much like regular workouts build stamina and strength.\n\n2️⃣ Discipline Beats Motivation\nMotivation gets you started; discipline keeps you going. Skipping a workout today won’t harm you, but making it a habit will. The same applies to SIPs.\nSetting up an automatic SIP ensures you’re investing regularly without overthinking market ups and downs. You’re building a routine that strengthens your financial muscles over time.\n\n3️⃣ Progress is Slow, But Visible\nYou don’t see abs after a week in the gym, and you won’t see a fortune after a month of SIPs. But with time, the results compound.\nFor instance, investing ₹5,000 monthly at an average 12% annual return can grow into ₹1 crore in 25 years. That’s the magic of patience and persistence.\n\n4️⃣ A Trainer Helps—In Fitness and Finance\nJust as a trainer guides you to the right exercises and helps avoid injuries, a financial expert helps you choose the right funds and avoid costly mistakes.\nOur goal-based approach ensures your SIPs align with your life goals—whether it’s buying a house, funding your child’s education, or planning an early retirement.\n\n🏋️‍♂️ The Bottom Line\nYour first SIP is more than an investment; it’s a commitment to your future self. Start small, stay consistent, and trust the process. Over time, these small steps will build the financial strength to help you live life on your terms.\nSo, are you ready to take the first step towards your financial fitness journey with Helios Investments?",
+      author: "Vandita Sanghvi",
+      publishDate: "2025-01-15",
+      readTime: "3 min read",
+      image: sipimg,
+      tags: ["SIP"],
       featured: false
     },
     {
       id: 3,
-      title: "Tax-Saving Investments: ELSS vs PPF vs NSC",
-      excerpt: "Explore the best tax-saving investment options under Section 80C and understand which one aligns with your financial goals and risk appetite.",
-      content: "Section 80C of the Income Tax Act allows you to save up to ₹1.5 lakh in taxes annually. Among the various options available, ELSS, PPF, and NSC are the most popular choices.\n\nELSS (Equity Linked Saving Scheme) offers the shortest lock-in period of just 3 years and has the potential for higher returns through equity exposure. However, it comes with market risk.\n\nPPF (Public Provident Fund) is a government-backed scheme with a 15-year lock-in period. It offers tax-free returns and is considered one of the safest investment options.\n\nNSC (National Savings Certificate) is also government-backed with a 5-year lock-in period and offers fixed returns.\n\nFactors to consider when choosing:\n• Lock-in period requirements\n• Risk tolerance\n• Expected returns\n• Liquidity needs\n• Tax implications\n\nFor aggressive investors seeking higher returns, ELSS might be suitable. For conservative investors prioritizing safety, PPF or NSC could be better options.",
-      author: "Amit Patel",
-      publishDate: "2024-01-08",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["Tax Saving", "ELSS", "PPF"],
+      title: "It’s Time to Unlearn: Myths that hold you back",
+      excerpt: "In India, conversations about money often come wrapped in cautionary tales. From dinner table advice to WhatsApp forwards, we’re surrounded by myths that keep many from taking the first step towards investing.",
+      content: "🌱 Myth 1: “Investing is only for the rich.\n💡 Reality: Investing is for anyone with a goal.\nIn the past, stock markets and mutual funds may have felt like a playground for the wealthy. But today, with SIPs (Systematic Investment Plans), you can start investing with as little as ₹500 a month.\nThink about it: that’s less than your monthly chai-and-snacks budget! The earlier you start, the more time your money gets to grow through compounding.\n\nHelios Tip: Start small. Increase your SIP as your income grows. Even small steps today can lead to a big corpus tomorrow.\n\n📉 Myth 2: “The stock market is gambling.”\n💡 Reality: Investing is not gambling—it’s strategy.\nIt’s a common fear: “I’ll lose all my money if the market crashes.” But investing isn’t about betting on random stocks. It’s about disciplined planning, diversification, and staying invested for the long term.When you invest in mutual funds, professional fund managers spread your money across different sectors to reduce risk. Historically, Indian equity markets have delivered healthy returns over 10–15 years, despite short-term ups and downs.\n\nHelios Tip: Don’t try to time the market. Time in the market beats timing the market.\n\n🕰️ Myth 3: “I’ll start investing when I earn more.”\n💡 Reality: The best time to invest was yesterday; the second-best time is today.Waiting for a higher salary or a “right time” in the market only delays your goals. Starting early—even with small amounts—allows compounding to work its magic.\nFor example, if you invest ₹5,000 per month starting at age 25, you could have ₹2.5 crore by 55 (assuming 12% annual returns). Start at 35, and you’ll end up with less than half.\n\nHelios Tip: Treat investing like paying a monthly bill—non-negotiable. Your future self will thank you.\n\n🏦 Myth 4: “Fixed deposits are safer than mutual funds.”\n💡 Reality: FDs are safe, but they may not beat inflation.Indians love the security of fixed deposits, and rightly so—they’re low risk. But FD interest rates often lag behind inflation, meaning your money loses purchasing power over time.Mutual funds, especially debt and hybrid funds, can offer relatively stable returns while keeping pace with inflation. For long-term goals, equity funds offer growth potential that FDs simply can’t match.\n\nHelios Tip: Don’t put all your eggs in one basket. A mix of FDs, equity, and debt funds creates a balanced portfolio.\n\nThe Bottom Line\nIn India, myths about investing have held back generations from creating wealth. But times are changing. With technology, access, and expert guidance, building a secure financial future is within everyone’s reach.At the end of the day, it is not about choosing between saving and investing; it is about finding a balance. Savings may seem like they provide a safety net, but investments offer growth opportunities",
+      author: "Vandita Sanghvi",
+      publishDate: "2025-01-15",
+      readTime: "5 min read",
+      image: mythimg,
+      tags: ["Goal-Based Investing", "retirement planning"],
       featured: true
     },
     {
       id: 4,
-      title: "Understanding Asset Allocation: The Key to Balanced Investing",
-      excerpt: "Learn how proper asset allocation across equity, debt, and gold can help you achieve your financial goals while managing risk effectively.",
-      content: "Asset allocation is the strategic distribution of your investment portfolio across different asset classes such as equity, debt, and alternative investments like gold.\n\nThe right asset allocation depends on several factors including your age, risk tolerance, investment goals, and time horizon.\n\nA common rule of thumb is the '100 minus age' rule for equity allocation. For example, if you're 30 years old, you might allocate 70% to equity and 30% to debt.\n\nKey principles of asset allocation:\n• Diversification reduces risk\n• Regular rebalancing maintains target allocation\n• Asset allocation should evolve with age\n• Consider market conditions and economic cycles\n• Align allocation with your financial goals\n\nRemember that asset allocation is not a one-time decision. It requires regular review and adjustment based on changing circumstances and market conditions.",
-      author: "Sneha Verma",
-      publishDate: "2024-01-05",
-      readTime: "8 min read",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Where Should You Park Idle Money?",
+      excerpt: "When it comes to parking short-term money, most of us instinctively turn to savings accounts or fixed deposits (FDs). After all, they’re “safe” and “easy,” right? But what if there was a smarter alternative that gives you better returns, easy access? \n Enter Liquid Funds—a lesser-known but highly effective option for short-term financial needs.",
+      content: "The Traditional Approach: Savings Account & FDs \n Imagine Priya has received a bonus of ₹2 lakh. She doesn’t want to spend it immediately but plans to use it within 6 months for a vacation.\n Here’s what she considers:\n ✅ Savings Account – Easy to park money, instant access. But the average interest rate? Around 3%–4% p.a. That’s barely keeping up with inflation.\n✅ Fixed Deposit – Slightly better interest rates (5%–6%), but it locks her money for a fixed period. Breaking it early means penalties and reduced returns.\n Neither option seems ideal for a short-term goal like hers\n Now, let’s say Priya learns about Liquid Funds. She parks her ₹2 lakh here. What happens?\nInvestment Portfolio: Liquid funds primarily invest in debt and money market instruments with maturities of up to 91 days. This short duration reduces exposure to both interest rate fluctuations and credit risk.\n Liquidity: Investors enjoy faster redemption options, with T+1 (next business day) availability and instant redemption facilities up to ₹50,000, wherever available.\nEasy withdrawals: Redemptions made after seven days of investment incur no exit load, making liquid funds almost as accessible as a traditional saving option\nWhen Should One Choose a Liquid Fund?\nLiquid funds are ideal for those who:\n Are building an emergency fund and want it to grow while remaining easily accessible.\n Need to park surplus money for the short term.\n Have received unexpected cash but are unsure where to invest it.\n Wish to stagger their investments into the market.\n Are uncertain about the right time to make long-term investments.\n\nFinal Word\nYour short-term money deserves better than lying idle in a savings account or being locked away in an FD. Liquid funds offer a smarter alternative—keeping your funds accessible while earning better returns.",
+      author: "Vandita Sanghvi",
+      publishDate: "2025-01-15",
+      readTime: "4 min read",
+      image: moneyimg,
       tags: ["Asset Allocation", "Portfolio Management", "Risk Management"],
       featured: false
     },
     {
       id: 5,
-      title: "Retirement Planning in Your 20s: Why Starting Early Makes All the Difference",
-      excerpt: "Discover why your 20s are the perfect time to start retirement planning and how small investments today can create massive wealth tomorrow.",
-      content: "Many young professionals in their 20s believe retirement planning can wait. However, starting early is one of the most powerful wealth-building strategies available.\n\nThe power of compounding works best when you have time on your side. Even small investments made in your 20s can grow into substantial amounts by retirement.\n\nConsider this example: If you invest ₹5,000 per month starting at age 25 with a 12% annual return, you could accumulate over ₹2.5 crore by age 60. If you start at age 35, you might only accumulate around ₹80 lakhs.\n\nBenefits of early retirement planning:\n• More time for compound growth\n• Lower monthly investment requirements\n• Better risk tolerance for equity exposure\n• Flexibility to adjust strategies\n• Peace of mind about future security\n\nStart with small amounts if needed, but start early. Your future self will thank you for the foresight and discipline.",
-      author: "Rajesh Kumar",
-      publishDate: "2024-01-03",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "5 Golden Rules of Financial Planning You Can’t Ignore",
+      excerpt: "Money doesn’t come with a manual—but having a few golden rules can make your financial journey a lot smoother. Whether you’re just starting out or trying to get your finances in shape, these timeless principles will help you build a secure future.",
+      content: "🌟 1. Spend Less Than You Earn\nSounds simple, but it’s the foundation of financial success. Track your expenses, avoid unnecessary debt, and make saving a habit. Remember, wealth isn’t about how much you earn—it’s about how much you keep.\n💰 2. Pay Yourself First\nThe moment your salary hits your account, set aside a portion for savings and investments before spending on anything else. Automate SIPs or transfers so saving becomes effortless.Think of it as your future self’s salary—it deserves priority.\n\n📈 3. Invest for Goals, Not Trends\nDon’t get distracted by hot stock tips or market noise. Define your life goals—buying a house, kids’ education, retirement—and align your investments accordingly. A goal-based plan keeps you focused through market ups and downs.\n\n🛡️ 4. Protect What You’re Building\nAn emergency fund and proper insurance (health, term life) are your financial safety nets. They ensure that unexpected events don’t derail your long-term plans.\n\n⏳ 5. Start Early, Stay Consistent\nThe earlier you start, the harder your money works for you thanks to compounding. Even small monthly SIPs can grow into a big corpus over time. Stay consistent and give your investments time to do their job.\n\n🚀 The Bottom Line\nFinancial planning isn’t about perfection—it’s about progress. These golden rules can help you take control of your money and secure the life you dream of.",
+      author: "Vandita Sanghvi",
+      publishDate: "2025-01-15",
+      readTime: "4 min read",
+      image: financeimg,
       tags: ["Retirement Planning", "Early Investing", "Financial Planning"],
-      featured: false
+      featured: true
     },
     {
       id: 6,
-      title: "Emergency Fund: Your Financial Safety Net",
-      excerpt: "Learn why an emergency fund is crucial for financial stability and how to build one that can protect you during unexpected life events.",
-      content: "An emergency fund is a crucial component of any sound financial plan. It serves as a financial safety net during unexpected events such as job loss, medical emergencies, or major repairs.\n\nFinancial experts recommend having 3-6 months of living expenses saved in your emergency fund. This provides adequate protection while keeping the amount reasonable.\n\nYour emergency fund should be:\n• Easily accessible (savings account or liquid funds)\n• Separate from your regular savings\n• Large enough to cover essential expenses\n• Regularly reviewed and updated\n\nBuilding an emergency fund takes time and discipline. Start by setting aside a small amount each month and gradually increase your contributions.\n\nRemember that an emergency fund is for true emergencies only. Avoid dipping into it for discretionary expenses or non-essential purchases.",
-      author: "Priya Sharma",
-      publishDate: "2024-01-01",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["Emergency Fund", "Financial Safety", "Cash Management"],
+      title: "Traditional Insurance vs Term Insurance + Mutual Funds: What Works Better?",
+      excerpt: "For decades, most Indian families equated “insurance” with “investment.” Endowment and money-back plans were seen as safe ways to save for the future while staying insured. But with rising awareness, many are now asking: Should I stick with traditional insurance policies, or combine Term Insurance with Mutual Funds?",
+      content:"While both options aim to secure your future, they work very differently. Here is a direct comparison: \n\n" + 
+           "• TRADITIONAL INSURANCE (Endowment/Money-back):\n" +
+           "- Age : 35\n" +
+           "- Sum Assured : 50,00,000\n" +
+           "- Annual Premium : 2,51,210\n" +
+           "- Monthly Premium : 20,934\n" +
+           "- Policy Term : 25 years\n" +
+           "- Future Value (Maturity benefit=SA + bonus) = 1,25,00,000\n" +
+           "-------------------------------------------------\n" +
+           "• TERM INSURANCE(Pure Insurance):\n" +
+           "- Age : 35\n" +
+           "- Sum Assured : 50,00,000\n" +
+           "- Annual Premium : 11,210\n" +
+           "- Monthly Premium : 934\n" +
+           "- Policy Term : 25 years\n" +
+           "-------------------------------------------------\n" +
+           "• Mutual Funds (SIP) - Investments\n" +
+           "- Monthly Investment (difference of term and traditional premium) : 20,000\n" +
+           "- Sum Assured : 50,00,000\n" +
+           "- Assumed Rate of Interest : 10%\n" +
+           "- No. of Years : 25 years\n" +
+           "- Future value : 2,65,36,668\n" +
+           "If your goal is true financial protection + wealth creation, Term Insurance + Mutual Funds is far superior. Traditional plans may feel safe, but they compromise both – low cover and low returns.\nIn today’s India, where medical costs, inflation, and aspirations are rising, separating “protection” (via term insurance) from “investment” (via mutual funds) is often the smarter and more efficient choice.",
+      author: "Vandita Sanghvi",
+      publishDate: "2025-01-15",
+      readTime: "2 min read",
+      image: lifeimg,
+      tags: [ "Financial Safety",],
       featured: false
     },
-    {
-      id: 7,
-      title: "Goal-Based Investing: Aligning Your Investments with Your Dreams",
-      excerpt: "Understand how goal-based investing can help you achieve specific life objectives, from buying a home to funding your child's education.",
-      content: "Goal-based investing is a strategy that aligns your investment choices with your specific life goals. Whether you're saving for a house, your child's education, or retirement, this approach helps you stay focused and disciplined.\n\nEach goal should have its own investment strategy based on:\n• Time horizon (short-term vs long-term)\n• Required amount\n• Risk tolerance\n• Liquidity needs\n\nShort-term goals (1-3 years) might be better suited for debt instruments or liquid funds. Long-term goals (5+ years) can benefit from equity exposure for better growth potential.\n\nBenefits of goal-based investing:\n• Clear purpose for each investment\n• Better tracking and monitoring\n• Easier to stay disciplined\n• Helps prioritize financial goals\n• Reduces emotional decision-making\n\nRegularly review your goals and adjust your investment strategies as needed. Life circumstances change, and your investment approach should evolve accordingly.",
-      author: "Amit Patel",
-      publishDate: "2023-12-28",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      tags: ["Goal-Based Investing", "Financial Planning", "Investment Strategy"],
-      featured: false
-    }
+    
   ];
 
   const handleReadMore = (post: BlogPost) => {
@@ -258,7 +275,7 @@ const Blogs = () => {
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     {post.featured && (
                       <div className="absolute top-4 left-4">
