@@ -2,13 +2,19 @@ import React, { useState } from 'react';
 import { Calendar, Clock, Tag, User, Search, Filter, TrendingUp, BookOpen, DollarSign, Shield, PieChart, Target } from 'lucide-react';
 import BlogModal from '../components/BlogModal';
 import { sendToGoogleSheets, getConfiguredSheetName } from '../services/googleSheets';
-import mfimg from '../assets/blogimg/mutualfunds.jpg';
-import sipimg from '../assets/blogimg/sip.jpg';
-import mythimg from '../assets/blogimg/myth.jpg';
-import moneyimg from '../assets/blogimg/money.jpg';
-import financeimg from '../assets/blogimg/finance.jpg';
-import lifeimg from '../assets/blogimg/lifeinsurance.jpg';
+// import mfimg from '../assets/blogimg/mutualfunds.jpg';
+// import sipimg from '../assets/blogimg/sip.jpg';
+// import mythimg from '../assets/blogimg/myth.jpg';
+// import moneyimg from '../assets/blogimg/money.jpg';
+// import financeimg from '../assets/blogimg/finance.jpg';
+// import lifeimg from '../assets/blogimg/lifeinsurance.jpg';
 
+ const mfimg = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516477/mutualfunds_lonekw.jpg';
+ const sipimg ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516478/sip_a7ceci.jpg';
+ const mythimg = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516477/myth_d8ybqw.jpg';
+ const moneyimg = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516477/money_yuzxuu.jpg';
+ const financeimg = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516476/finance_wfwn9q.jpg';
+ const lifeimg = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516476/lifeinsurance_bu268c.jpg';
 interface BlogPost {
   id: number;
   title: string;
@@ -338,48 +344,9 @@ const Blogs = () => {
         </div>
       </section>
 
-      {/* Bottom Line Section */}
-      <section className="bg-[#1a1750] section-padding">
-        <div className="max-w-4xl mx-auto container-padding text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">So, are you ready to let your money work as hard as you do?</h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-8">
-            Mutual funds are not a magic wand, but with the right mix of equity and debt funds, 
-            a disciplined SIP approach, and a clear goal, they can help you achieve financial 
-            independence earlier than traditional retirement timelines.
-          </p>
-        </div>
-      </section>
+      
 
-      {/* Newsletter Section */}
-      <section className="bg-gray-100 py-16">
-        <div className="max-w-4xl mx-auto container-padding text-center">
-          <h2 className="text-2xl font-bold text-[#1a1750] mb-4">Stay Updated</h2>
-          <p className="text-gray-600 mb-8">
-            Subscribe to our newsletter and get the latest insights delivered to your inbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={subscribeEmail}
-              onChange={(e) => setSubscribeEmail(e.target.value)}
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1a1750] focus:border-transparent"
-            />
-            <button 
-              onClick={handleSubscribe}
-              disabled={isSubscribing || !subscribeEmail}
-              className="btn-accent disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubscribing ? 'Subscribing...' : 'Subscribe'}
-            </button>
-          </div>
-          {subscribeMessage && (
-            <p className={`mt-3 text-sm ${subscribeMessage.includes('Thank you') ? 'text-green-600' : 'text-red-600'}`}>
-              {subscribeMessage}
-            </p>
-          )}
-        </div>
-      </section>
+      
 
       {/* Blog Modal */}
       <BlogModal 

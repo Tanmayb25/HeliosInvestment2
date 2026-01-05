@@ -1,16 +1,28 @@
-import HeliosLogo from '../assets/HeliosIcon.png';
-import adityaBirlaLogo from '../assets/amc/adityabirla.webp';
-import axisLogo from '../assets/amc/axis.webp';
-import hdfcLogo from '../assets/amc/hdfc.webp';
-import iciciLogo from '../assets/amc/icici.webp';
-import kotakLogo from '../assets/amc/kotak.webp';
-import miraeLogo from '../assets/amc/mirae.webp';
-import motilalOswalLogo from '../assets/amc/motilaloswal.webp';
-import nipponLogo from '../assets/amc/nippon.png';
-import sbiLogo from '../assets/amc/sbi.webp';
-import utiLogo from '../assets/amc/uti.webp';
+// import HeliosLogo from '../assets/HeliosIcon.png';
+// import adityaBirlaLogo from '../assets/amc/adityabirla.webp';
+// import axisLogo from '../assets/amc/axis.webp';
+// import hdfcLogo from '../assets/amc/hdfc.webp';
+// import iciciLogo from '../assets/amc/icici.webp';
+// import kotakLogo from '../assets/amc/kotak.webp';
+// import miraeLogo from '../assets/amc/mirae.webp';
+// import motilalOswalLogo from '../assets/amc/motilaloswal.webp';
+// import nipponLogo from '../assets/amc/nippon.png';
+// import sbiLogo from '../assets/amc/sbi.webp';
+// import utiLogo from '../assets/amc/uti.webp';
+
+const HeliosLogo  ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516440/HeliosIcon_klalpp.png';
+const adityaBirlaLogo ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516551/adityabirla_urrnbk.webp';
+const axisLogo  = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516552/axis_fz5smp.webp';
+const hdfcLogo ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516553/hdfc_ysevj8.webp';
+const iciciLogo  = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516554/icici_ucocaq.webp';
+const kotakLogo  ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516556/kotak_tob9hj.webp';
+const miraeLogo  ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516556/mirae_c01tox.webp';
+const motilalOswalLogo ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516558/motilaloswal_sil3ao.webp';
+const nipponLogo  ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516559/nippon_gdjkqu.webp';
+const sbiLogo  ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516561/sbi_v7ttr4.webp';
+const utiLogo ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516562/uti_juflay.webp';
 // import AboutUs from '../assets/AboutUsimg.jpg';
-import { Target, Sun, TrendingUp, Award, Linkedin, Mail } from 'lucide-react';
+import { Target, Sun, TrendingUp, Award, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 // const AboutUs= 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1757994777/AboutUsimg_rxt5vn.jpg';
@@ -122,7 +134,7 @@ const About = () => {
             
             <div className="relative">
               <img
-                src="https://res.cloudinary.com/dlfi4zq4f/image/upload/v1757994777/AboutUsimg_rxt5vn.jpg"
+                src="https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516440/AboutUsimg_vpegru.jpg"
                 alt="Team collaboration"
                 className="w-full h-80 object-cover rounded-2xl shadow-strong"
               />
@@ -279,9 +291,7 @@ const About = () => {
                   <a href={`mailto:${member.email}`} className="text-[#1a1750] hover:text-[#fbb81f] transition-colors duration-200">
                     <Mail className="w-5 h-5" />
                   </a>
-                  <a href={member.linkedin} className="text-[#1a1750] hover:text-[#fbb81f] transition-colors duration-200">
-                    <Linkedin className="w-5 h-5" />
-                  </a>
+                  
                 </div>
               </div>
             ))}

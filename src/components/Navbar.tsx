@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun } from 'lucide-react';
-import HeliosLogo from '../assets/HeliosLogo.png'
+// import HeliosLogo from '../assets/HeliosLogo.png';
+
+const HeliosLogo = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516441/HeliosLogo_pufkiz.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

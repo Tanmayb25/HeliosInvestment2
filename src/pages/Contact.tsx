@@ -201,8 +201,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#1a1750] mb-1">Phone</h4>
-                      <p className="text-gray-600">+91 9876543210</p>
-                      <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM</p>
+                      <p className="text-gray-600">+91 7507751180</p>
                     </div>
                   </div>
 
@@ -212,7 +211,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#1a1750] mb-1">Email</h4>
-                      <p className="text-gray-600">info@helios.com</p>
+                      <p className="text-gray-600">investmentsathelios@gmail.com</p>
                       <p className="text-sm text-gray-500">We reply within 24 hours</p>
                     </div>
                   </div>
@@ -223,7 +222,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#1a1750] mb-1">Office</h4>
-                      <p className="text-gray-600">Mumbai, Maharashtra</p>
+                      <p className="text-gray-600">Pune, Maharashtra</p>
                       <p className="text-sm text-gray-500">India</p>
                     </div>
                   </div>

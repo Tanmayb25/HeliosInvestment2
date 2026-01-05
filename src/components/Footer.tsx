@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Sun, Mail, Phone, MapPin, X, Shield } from 'lucide-react';
-import HeliosLogo from '../assets/HeliosIcon.png';
+// import HeliosLogo from '../assets/HeliosIcon.png';
+// import PlayStoreIcon from '../assets/playstore.png'; // adjust path if needed
+
+const HeliosLogo = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516440/HeliosIcon_klalpp.png';
+const PlayStoreIcon = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767632176/playstore_ohgvpo.png';
 
 const Footer = () => {
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
@@ -152,18 +156,17 @@ const Footer = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Mail className="w-4 h-4 text-[#fbb81f]" />
-                    <span className="text-gray-300 text-sm">info@helios.com</span>
+                    <span className="text-gray-300 text-sm">investmentsathelios@gmail.com</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-4 h-4 text-[#fbb81f]" />
-                    <span className="text-gray-300 text-sm">+91 9876543210</span>
-                  </div>
+                  
                   <div className="flex items-center space-x-3">
                     <MapPin className="w-4 h-4 text-[#fbb81f]" />
-                    <span className="text-gray-300 text-sm">Mumbai, Maharashtra</span>
+                    <span className="text-gray-300 text-sm">Pune, Maharashtra</span>
                   </div>
                 </div>
               </div>
+
+              
             </div>
           </div>
 
@@ -175,6 +178,31 @@ const Footer = () => {
               </p>
               
               <div className="flex items-center space-x-6">
+                {/* External Website Link */}
+                <a
+                  href="https://fundzbazar.com/Link/s8SrXqJzd2s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#fbb81f] text-sm transition-colors duration-200"
+                >
+                  Visit Our Website
+                </a>
+
+                {/* Play Store Link */}
+                <a
+                  href="https://fundzbazar.com/Link/8eqClfG8mew"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center hover:opacity-80 transition-opacity duration-200"
+                >
+                  <img
+                    src={PlayStoreIcon}
+                    alt="Get it on Google Play"
+                    className="h-10 w-auto"
+                  />
+                </a>
+
+                {/* Privacy Policy */}
                 <button
                   onClick={() => setShowPrivacyPolicy(true)}
                   className="text-gray-400 hover:text-[#fbb81f] text-sm transition-colors duration-200 flex items-center space-x-1"
@@ -182,11 +210,12 @@ const Footer = () => {
                   <Shield className="w-4 h-4" />
                   <span>Privacy Policy</span>
                 </button>
-                
+
                 <span className="text-gray-400 text-sm">
                   Terms & Conditions
                 </span>
               </div>
+
             </div>
           </div>
         </div>

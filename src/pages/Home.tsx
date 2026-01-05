@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Target, Eye, Heart, Users, TrendingUp, Shield, Award, CheckCircle, ArrowRight, FileText, BarChart3 } from 'lucide-react';
 import QuizModal from '../components/QuizModal';
 // Cloudinary URLs for hero slider images
-const life01 = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1757994780/life01_uktmdt.jpg';
-const life02 = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1757994780/life02_dclbl3.jpg';
-const travel01 = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1757994779/travel01_thofwk.jpg';
-const rich01 = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1757994783/rich01_veivmw.jpg';
+const life01 = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516441/life01_nupwtl.jpg';
+const life02 = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516441/life02_hkzofr.jpg';
+const travel01 = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516442/travel01_mozrjq.jpg';
+const rich01 = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516442/rich01_nxgjks.jpg';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
