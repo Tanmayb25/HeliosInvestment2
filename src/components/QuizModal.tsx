@@ -36,92 +36,92 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
   const quizQuestions: QuizQuestion[] = [
     {
       id: 1,
-      question: "How would you describe your current investment portfolio?",
+      question: "At the end of the month, do you know exactly where your money went?",
       answers: [
-        { text: "Well-diversified across asset classes with regular monitoring", score: 3 },
-        { text: "Some investments but lack proper diversification", score: 2 },
-        { text: "Minimal or no investments beyond savings accounts", score: 1 }
+        { text: "Yes, I track every expense", score: 3 },
+        { text: "I have a rough idea", score: 2 },
+        { text: "Not really, it feels like it disappears", score: 1 }
       ]
     },
     {
       id: 2,
-      question: "How often do you review and rebalance your investments?",
+      question: "Do you know where all your investments are and what they’re worth today?",
       answers: [
-        { text: "Quarterly or as needed based on market conditions", score: 3 },
-        { text: "Annually or when I remember to check", score: 2 },
-        { text: "Rarely or never", score: 1 }
+        { text: "Yes, I regularly check and review them", score: 3 },
+        { text: "I have a general idea, but not in detail ", score: 2 },
+        { text: "No, I’m not sure about the details", score: 1 }
       ]
     },
     {
       id: 3,
-      question: "What's your approach to emergency funds?",
+      question: "Are your investments linked to life goals (like a child's education, retirement, dream home)?",
       answers: [
-        { text: "6-12 months of expenses saved in easily accessible accounts", score: 3 },
-        { text: "3-6 months of expenses saved", score: 2 },
-        { text: "Less than 3 months or no emergency fund", score: 1 }
+        { text: "Yes, each goal has a clear plan", score: 3 },
+        { text: "Somewhat, but not fully planned", score: 2 },
+        { text: "No, I just invest whenever possible", score: 1 }
       ]
     },
     {
       id: 4,
-      question: "How do you handle tax planning for your investments?",
+      question: "Do you have adequate life and health insurance coverage for your family?",
       answers: [
-        { text: "Actively use tax-efficient strategies and instruments", score: 3 },
-        { text: "Some awareness but limited implementation", score: 2 },
-        { text: "No specific tax planning strategy", score: 1 }
+        { text: "Yes, fully covered", score: 3 },
+        { text: "Partially covered, not sure if it’s enough", score: 2 },
+        { text: "No, or I haven’t reviewed it in years", score: 1 }
       ]
     },
     {
       id: 5,
-      question: "What's your retirement planning status?",
+      question: "If there’s a market crash tomorrow, how would you feel about your investments?",
       answers: [
-        { text: "Clear retirement goals with systematic planning in place", score: 3 },
-        { text: "Some retirement savings but no detailed plan", score: 2 },
-        { text: "Little to no retirement planning", score: 1 }
+        { text: "Confident, I have a long-term plan", score: 3 },
+        { text: "A little anxious, but I might hold on", score: 2 },
+        { text: "Worried, I’d consider pulling out", score: 1 }
       ]
     },
     {
       id: 6,
-      question: "How do you stay informed about market trends and investment opportunities?",
+      question: "Do you review your financial portfolio and insurance regularly?",
       answers: [
-        { text: "Regular research, professional advice, and market analysis", score: 3 },
-        { text: "Occasional reading and basic research", score: 2 },
-        { text: "Rely on tips from friends or rarely research", score: 1 }
+        { text: "Yes, every 6-12 months", score: 3 },
+        { text: "Occasionally, when I remember", score: 2 },
+        { text: "Never, or I rely on luck", score: 1 }
       ]
     },
     {
       id: 7,
-      question: "What's your insurance coverage strategy?",
+      question: "How confident are you about achieving your financial goals on time?",
       answers: [
-        { text: "Comprehensive life and health insurance aligned with goals", score: 3 },
-        { text: "Basic insurance coverage in place", score: 2 },
-        { text: "Minimal or no insurance coverage", score: 1 }
+        { text: "Very confident", score: 3 },
+        { text: "Somewhat confident, but unsure about the details", score: 2 },
+        { text: "Not confident at all", score: 1 }
       ]
     },
     {
       id: 8,
-      question: "How do you manage debt and leverage?",
+      question: "Would you find it helpful to have an expert keeping your finances and investments on track?",
       answers: [
-        { text: "Strategic use of debt with clear repayment plans", score: 3 },
-        { text: "Some debt but manageable levels", score: 2 },
-        { text: "High debt levels or no clear strategy", score: 1 }
+        { text: "I already have one and it helps a lot", score: 3 },
+        { text: "I’m considering it", score: 2 },
+        { text: "Definitely, I need guidance", score: 1 }
       ]
     },
     {
       id: 9,
-      question: "What's your approach to goal-based investing?",
+      question: "Do you know the difference between saving and investing?",
       answers: [
-        { text: "Specific investments aligned with different life goals", score: 3 },
-        { text: "Some goal-based thinking but not systematic", score: 2 },
-        { text: "General investing without specific goal alignment", score: 1 }
+        { text: "Yes, and I actively invest for growth", score: 3 },
+        { text: "I think so, but I mostly save", score: 2 },
+        { text: "Not really, I prefer to keep money in savings accounts/FDS", score: 1 }
       ]
     },
     {
       id: 10,
-      question: "How confident are you about achieving your financial goals?",
+      question: "How prepared are you financially for unexpected medical expenses?",
       answers: [
-        { text: "Very confident with a clear roadmap", score: 3 },
-        { text: "Somewhat confident but seek guidance", score: 2 },
-        { text: "Uncertain and need professional help", score: 1 }
+        { text: "Fully covered with insurance + emergency fund", score: 3 },
+        { text: "Partially prepared", score: 2 },
+        { text: "Not prepared at all", score: 1 }
       ]
     }
   ];

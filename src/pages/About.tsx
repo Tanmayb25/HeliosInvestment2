@@ -37,7 +37,7 @@ const About = () => {
       contribution: "Vandita brings a deep understanding of financial planning and investments, with global exposure and strong technical expertise.Vandita represents a new generation of financial advisors who combine global perspectives with a deep understanding of Indian markets.",
       qualifications: "CFA Level II, BBA in Finance and Economics from FLAME University",
       linkedin: "#",
-      email: "vandita@helios.com"
+      email: "sanghvivandita8@gmail.com.com"
     },
     
     {
@@ -49,7 +49,7 @@ const About = () => {
       contribution: "Om’s meticulous approach and strong understanding of financial systems provide a solid foundation for building trust and delivering reliable solutions for our clients.",
       qualifications: "CA Finalist professional",
       linkedin: "#",
-      email: "om@helios.com"
+      email: "ombalai03@gmail.com"
     },
     
   ];
@@ -66,6 +66,17 @@ const About = () => {
     { src: sbiLogo, alt: 'SBI Mutual Fund' },
     { src: utiLogo, alt: 'UTI Mutual Fund' },
   ];
+
+  const handleCopy = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    email: string
+  ) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(email);
+    alert("Email copied to clipboard!");
+  };
+  
+  
 
   const companyValues = [
     {
@@ -288,9 +299,19 @@ const About = () => {
                 </div>
 
                 <div className="flex justify-center space-x-4">
-                  <a href={`mailto:${member.email}`} className="text-[#1a1750] hover:text-[#fbb81f] transition-colors duration-200">
+                  {/* <a href={`mailto:${member.email}`} className="text-[#1a1750] hover:text-[#fbb81f] transition-colors duration-200">
+                    <Mail className="w-5 h-5" />
+                  </a> */}
+                  <a
+                    href={`mailto:${member.email}`}
+                    onClick={(e) => handleCopy(e, member.email)}
+                    className="text-[#1a1750] hover:text-[#fbb81f] transition-colors duration-200"
+                  >
                     <Mail className="w-5 h-5" />
                   </a>
+
+
+
                   
                 </div>
               </div>

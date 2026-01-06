@@ -185,7 +185,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-[#fbb81f] text-sm transition-colors duration-200"
                 >
-                  Visit Our Website
+                  Sign in
                 </a>
 
                 {/* Play Store Link */}
@@ -211,9 +211,7 @@ const Footer = () => {
                   <span>Privacy Policy</span>
                 </button>
 
-                <span className="text-gray-400 text-sm">
-                  Terms & Conditions
-                </span>
+                
               </div>
 
             </div>
