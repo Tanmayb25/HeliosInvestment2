@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, Tag, User, Search, Filter, TrendingUp, BookOpen, DollarSign, Shield, PieChart, Target } from 'lucide-react';
 import BlogModal from '../components/BlogModal';
-import { sendToGoogleSheets, getConfiguredSheetName } from '../services/googleSheets';
+// import { sendToGoogleSheets, getConfiguredSheetName } from '../services/googleSheets';
 // import mfimg from '../assets/blogimg/mutualfunds.jpg';
 // import sipimg from '../assets/blogimg/sip.jpg';
 // import mythimg from '../assets/blogimg/myth.jpg';
@@ -33,9 +33,9 @@ const Blogs = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedBlogPost, setSelectedBlogPost] = useState<BlogPost | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [subscribeEmail, setSubscribeEmail] = useState('');
-  const [isSubscribing, setIsSubscribing] = useState(false);
-  const [subscribeMessage, setSubscribeMessage] = useState('');
+  // const [subscribeEmail, setSubscribeEmail] = useState('');
+  // const [isSubscribing, setIsSubscribing] = useState(false);
+  // const [subscribeMessage, setSubscribeMessage] = useState('');
 
   const blogPosts: BlogPost[] = [
     {
@@ -145,42 +145,42 @@ const Blogs = () => {
     setSelectedBlogPost(null);
   };
 
-  const handleSubscribe = async () => {
-    if (!subscribeEmail || !subscribeEmail.includes('@')) {
-      setSubscribeMessage('Please enter a valid email address.');
-      return;
-    }
+  // const handleSubscribe = async () => {
+  //   if (!subscribeEmail || !subscribeEmail.includes('@')) {
+  //     setSubscribeMessage('Please enter a valid email address.');
+  //     return;
+  //   }
 
-    setIsSubscribing(true);
-    setSubscribeMessage('');
+  //   setIsSubscribing(true);
+  //   setSubscribeMessage('');
 
-    try {
-      const subscriptionData = {
-        type: 'newsletter_subscription',
-        email: subscribeEmail,
-        timestamp: new Date().toISOString(),
-        source: 'BlogsPage'
-      };
+  //   try {
+  //     const subscriptionData = {
+  //       type: 'newsletter_subscription',
+  //       email: subscribeEmail,
+  //       timestamp: new Date().toISOString(),
+  //       source: 'BlogsPage'
+  //     };
 
-      console.log('📧 Newsletter subscription:', subscriptionData);
+  //     console.log('📧 Newsletter subscription:', subscriptionData);
 
-      try {
-        await sendToGoogleSheets(subscriptionData, { sheetName: getConfiguredSheetName('contact') });
-        console.log('✅ Newsletter subscription sent to Google Sheets successfully');
-        setSubscribeMessage('Thank you for subscribing! You\'ll receive our latest insights soon.');
-        setSubscribeEmail('');
-      } catch (sheetsError) {
-        console.error('❌ Failed to send subscription to Google Sheets:', sheetsError);
-        setSubscribeMessage('Subscription saved! You\'ll receive our latest insights soon.');
-        setSubscribeEmail('');
-      }
-    } catch (error) {
-      console.error('❌ Newsletter subscription error:', error);
-      setSubscribeMessage('Something went wrong. Please try again.');
-    } finally {
-      setIsSubscribing(false);
-    }
-  };
+  //     try {
+  //       await sendToGoogleSheets(subscriptionData, { sheetName: getConfiguredSheetName('contact') });
+  //       console.log('✅ Newsletter subscription sent to Google Sheets successfully');
+  //       setSubscribeMessage('Thank you for subscribing! You\'ll receive our latest insights soon.');
+  //       setSubscribeEmail('');
+  //     } catch (sheetsError) {
+  //       console.error('❌ Failed to send subscription to Google Sheets:', sheetsError);
+  //       setSubscribeMessage('Subscription saved! You\'ll receive our latest insights soon.');
+  //       setSubscribeEmail('');
+  //     }
+  //   } catch (error) {
+  //     console.error('❌ Newsletter subscription error:', error);
+  //     setSubscribeMessage('Something went wrong. Please try again.');
+  //   } finally {
+  //     setIsSubscribing(false);
+  //   }
+  // };
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesTag = selectedTag === 'All' || post.tags.includes(selectedTag);

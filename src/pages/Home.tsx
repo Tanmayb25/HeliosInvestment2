@@ -16,6 +16,25 @@ const Home = () => {
   // Quiz Modal State
   const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const testimonials = [
+    {
+      name: "Archana Rathod",
+      designation: "Vice President, CitiBank",
+      review: "What I value the most is clarity, discipline and transparency in a financial advisor. The advice here is well researched, practical, and aligned with client goals rather than driven by products or commissions. The portfolio approach is structured and focused on long term wealth creation with proper risk management."
+    },
+    {
+      name: "Karishma Shah",
+      designation: "",
+      review: "A dependable team of professionals who genuinely understands their client's needs and offers thoughtful, well-structured solutions. The approach is disciplined and ethical."
+    },
+    {
+      name: "Tanmay Bhansali",
+      designation: "Software Developer, Avalara",
+      review: "It becomes difficult for me to manage and plan my finances on my own. But with Helios, it has become easier and more structured. They understood my needs and future visions, and provided the most optimum solutions. It was the best decision I've made for my financial future."
+    }
+  ];
 
   const heroSlides = [
     {
@@ -381,6 +400,76 @@ const Home = () => {
           </div>
 
           
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="max-w-7xl mx-auto container-padding">
+          <div className="text-center mb-16">
+            <h2 className="section-title">What Our Clients Say</h2>
+            <p className="section-subtitle">
+              Trusted by professionals and individuals alike for disciplined, ethical financial guidance.
+            </p>
+          </div>
+
+          <div className="relative max-w-3xl mx-auto">
+            {/* Carousel Container */}
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+              >
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="w-full flex-shrink-0 px-4">
+                    <div className="card p-8 relative text-center">
+                      <div className="absolute top-6 left-1/2 transform -translate-x-1/2 text-6xl text-[#fbb81f]/20 font-serif">"</div>
+                      <div className="relative z-10 pt-8">
+                        <p className="text-gray-600 leading-relaxed italic text-lg mb-8">
+                          "{testimonial.review}"
+                        </p>
+                        <div>
+                          <h4 className="text-lg font-semibold text-[#1a1750]">{testimonial.name}</h4>
+                          {testimonial.designation && (
+                            <p className="text-sm text-gray-500">{testimonial.designation}</p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-12 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-200"
+            >
+              <ChevronLeft className="w-6 h-6 text-[#1a1750]" />
+            </button>
+            <button
+              onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-12 p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-200"
+            >
+              <ChevronRight className="w-6 h-6 text-[#1a1750]" />
+            </button>
+
+            {/* Dot Indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                    index === currentTestimonial 
+                      ? 'bg-[#fbb81f] scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

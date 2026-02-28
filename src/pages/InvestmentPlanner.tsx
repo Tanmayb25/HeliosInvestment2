@@ -47,39 +47,92 @@ const InvestmentPlanner = () => {
       name: 'Retirement Calculator',
       icon: <Home className="w-6 h-6" />,
       description: 'Plan for your retirement corpus'
-    },
-    {
-      id: 'hlv',
-      name: 'HLV Calculator',
-      icon: <Shield className="w-6 h-6" />,
-      description: 'Calculate Human Life Value for insurance'
     }
   ];
+
+  // const calculateSIP = (monthlyAmount: number, years: number, annualReturn: number) => {
+  //   const monthlyReturn = annualReturn / 12 / 100;
+  //   const totalMonths = years * 12;
+  //   const futureValue = monthlyAmount * (((Math.pow(1 + monthlyReturn, totalMonths) - 1) / monthlyReturn) * (1 + monthlyReturn));
+  //   const totalInvested = monthlyAmount * totalMonths;
+    
+  //   // Generate chart data
+  //   const chartData = [];
+  //   let investedAmount = 0;
+  //   let currentValue = 0;
+    
+  //   for (let month = 1; month <= totalMonths; month++) {
+  //     investedAmount += monthlyAmount;
+  //     currentValue = monthlyAmount * (((Math.pow(1 + monthlyReturn, month) - 1) / monthlyReturn) * (1 + monthlyReturn));
+      
+  //     if (month % 12 === 0 || month === totalMonths) {
+  //       chartData.push({
+  //         year: Math.floor(month / 12),
+  //         invested: Math.round(investedAmount),
+  //         maturity: Math.round(currentValue)
+  //       });
+  //     }
+  //   }
+
+  //   return {
+  //     monthlyInvestment: monthlyAmount,
+  //     investmentPeriod: years,
+  //     expectedReturn: annualReturn,
+  //     targetAmount: 0,
+  //     totalInvested: Math.round(totalInvested),
+  //     maturityAmount: Math.round(futureValue),
+  //     gains: Math.round(futureValue - totalInvested),
+  //     chartData
+  //   };
+  // };
 
   const calculateSIP = (monthlyAmount: number, years: number, annualReturn: number) => {
     const monthlyReturn = annualReturn / 12 / 100;
     const totalMonths = years * 12;
-    const futureValue = monthlyAmount * (((Math.pow(1 + monthlyReturn, totalMonths) - 1) / monthlyReturn) * (1 + monthlyReturn));
+  
+    let futureValue = 0;
+  
+    if (monthlyReturn === 0) {
+      futureValue = monthlyAmount * totalMonths;
+    } else {
+      futureValue =
+        monthlyAmount *
+        (((Math.pow(1 + monthlyReturn, totalMonths) - 1) / monthlyReturn) *
+          (1 + monthlyReturn));
+    }
+  
     const totalInvested = monthlyAmount * totalMonths;
-    
-    // Generate chart data
+  
     const chartData = [];
     let investedAmount = 0;
     let currentValue = 0;
-    
+  
     for (let month = 1; month <= totalMonths; month++) {
       investedAmount += monthlyAmount;
-      currentValue = monthlyAmount * (((Math.pow(1 + monthlyReturn, month) - 1) / monthlyReturn) * (1 + monthlyReturn));
-      
+  
+      if (monthlyReturn === 0) {
+        currentValue = investedAmount;
+      } else {
+        currentValue =
+          monthlyAmount *
+          (((Math.pow(1 + monthlyReturn, month) - 1) / monthlyReturn) *
+            (1 + monthlyReturn));
+      }
+  
+      // Force last value to match exactly
+      if (month === totalMonths) {
+        currentValue = futureValue;
+      }
+  
       if (month % 12 === 0 || month === totalMonths) {
         chartData.push({
-          year: Math.floor(month / 12),
+          year: Math.ceil(month / 12),
           invested: Math.round(investedAmount),
           maturity: Math.round(currentValue)
         });
       }
     }
-
+  
     return {
       monthlyInvestment: monthlyAmount,
       investmentPeriod: years,
@@ -91,42 +144,147 @@ const InvestmentPlanner = () => {
       chartData
     };
   };
+  
 
-  const calculateGoal = (targetAmount: number, years: number, annualReturn: number) => {
-    const monthlyReturn = annualReturn / 12 / 100;
-    const totalMonths = years * 12;
-    const monthlyInvestment = targetAmount / (((Math.pow(1 + monthlyReturn, totalMonths) - 1) / monthlyReturn) * (1 + monthlyReturn));
-    const totalInvested = monthlyInvestment * totalMonths;
+  // const calculateGoal = (targetAmount: number, years: number, annualReturn: number) => {
+  //   const monthlyReturn = annualReturn / 12 / 100;
+  //   const totalMonths = years * 12;
+  //   const monthlyInvestment = targetAmount / (((Math.pow(1 + monthlyReturn, totalMonths) - 1) / monthlyReturn) * (1 + monthlyReturn));
+  //   const totalInvested = monthlyInvestment * totalMonths;
     
-    // Generate chart data
-    const chartData = [];
-    let investedAmount = 0;
-    let currentValue = 0;
+  //   // Generate chart data
+  //   const chartData = [];
+  //   let investedAmount = 0;
+  //   let currentValue = 0;
     
-    for (let month = 1; month <= totalMonths; month++) {
-      investedAmount += monthlyInvestment;
-      currentValue = monthlyInvestment * (((Math.pow(1 + monthlyReturn, month) - 1) / monthlyReturn) * (1 + monthlyReturn));
+  //   for (let month = 1; month <= totalMonths; month++) {
+  //     investedAmount += monthlyInvestment;
+  //     currentValue = monthlyInvestment * (((Math.pow(1 + monthlyReturn, month) - 1) / monthlyReturn) * (1 + monthlyReturn));
       
-      if (month % 12 === 0 || month === totalMonths) {
-        chartData.push({
-          year: Math.floor(month / 12),
-          invested: Math.round(investedAmount),
-          maturity: Math.round(currentValue)
-        });
-      }
-    }
+  //     if (month % 12 === 0 || month === totalMonths) {
+  //       chartData.push({
+  //         year: Math.floor(month / 12),
+  //         invested: Math.round(investedAmount),
+  //         maturity: Math.round(currentValue)
+  //       });
+  //     }
+  //   }
 
+  //   return {
+  //     monthlyInvestment: Math.round(monthlyInvestment),
+  //     investmentPeriod: years,
+  //     expectedReturn: annualReturn,
+  //     targetAmount,
+  //     totalInvested: Math.round(totalInvested),
+  //     maturityAmount: targetAmount,
+  //     gains: Math.round(targetAmount - totalInvested),
+  //     chartData
+  //   };
+  // };
+
+  // const calculateGoal = (targetAmount: number, years: number, annualReturn: number) => {
+  //   const monthlyReturn = annualReturn / 12 / 100;
+  //   const totalMonths = years * 12;
+  
+  //   let monthlyInvestment = 0;
+  
+  //   if (monthlyReturn === 0) {
+  //     monthlyInvestment = targetAmount / totalMonths;
+  //   } else {
+  //     monthlyInvestment =
+  //       targetAmount /
+  //       (((Math.pow(1 + monthlyReturn, totalMonths) - 1) / monthlyReturn) *
+  //         (1 + monthlyReturn));
+  //   }
+  
+  //   const roundedMonthlyInvestment = Math.round(monthlyInvestment);
+  //   const totalInvested = roundedMonthlyInvestment * totalMonths;
+  
+  //   const chartData = [];
+  //   let investedAmount = 0;
+  //   let currentValue = 0;
+  
+  //   for (let month = 1; month <= totalMonths; month++) {
+  //     investedAmount += roundedMonthlyInvestment;
+  
+  //     if (monthlyReturn === 0) {
+  //       currentValue = investedAmount;
+  //     } else {
+  //       currentValue =
+  //         roundedMonthlyInvestment *
+  //         (((Math.pow(1 + monthlyReturn, month) - 1) / monthlyReturn) *
+  //           (1 + monthlyReturn));
+  //     }
+  
+  //     // Force final value to target
+  //     if (month === totalMonths) {
+  //       currentValue = targetAmount;
+  //     }
+  
+  //     if (month % 12 === 0 || month === totalMonths) {
+  //       chartData.push({
+  //         year: Math.ceil(month / 12),
+  //         invested: Math.round(investedAmount),
+  //         maturity: Math.round(currentValue)
+  //       });
+  //     }
+  //   }
+  
+  //   return {
+  //     monthlyInvestment: roundedMonthlyInvestment,
+  //     investmentPeriod: years,
+  //     expectedReturn: annualReturn,
+  //     targetAmount,
+  //     totalInvested,
+  //     maturityAmount: targetAmount,
+  //     gains: Math.round(targetAmount - totalInvested),
+  //     chartData
+  //   };
+  // };
+  const calculateGoal = (targetAmount: number, years: number, annualReturn: number) => {
+    const annualRate = annualReturn / 100;
+  
+    // ✅ Excel PV equivalent: PV(rate, nper, 0, -fv)
+    const initialInvestment =
+      annualRate === 0
+        ? targetAmount
+        : targetAmount / Math.pow(1 + annualRate, years);
+  
+    const roundedInitialInvestment = Math.round(initialInvestment);
+    const totalInvested = roundedInitialInvestment;
+  
+    const chartData: { year: number; invested: number; maturity: number }[] = [];
+    let currentValue = roundedInitialInvestment;
+  
+    for (let year = 1; year <= years; year++) {
+      currentValue =
+        annualRate === 0
+          ? roundedInitialInvestment
+          : currentValue * (1 + annualRate);
+  
+      chartData.push({
+        year,
+        invested: roundedInitialInvestment, // single investment stays constant
+        maturity: Math.round(currentValue)
+      });
+    }
+  
+    // ✅ Force exact target match on final year
+    chartData[chartData.length - 1].maturity = Math.round(targetAmount);
+  
     return {
-      monthlyInvestment: Math.round(monthlyInvestment),
+      monthlyInvestment: 0,                 // kept for frontend compatibility
       investmentPeriod: years,
       expectedReturn: annualReturn,
       targetAmount,
-      totalInvested: Math.round(totalInvested),
-      maturityAmount: targetAmount,
+      totalInvested,
+      maturityAmount: Math.round(targetAmount),
       gains: Math.round(targetAmount - totalInvested),
       chartData
     };
   };
+  
+  
 
   const renderCalculatorForm = () => {
     switch (selectedCalculator) {
@@ -140,8 +298,7 @@ const InvestmentPlanner = () => {
         return <MarriageCalculatorForm onCalculate={calculateGoal} setResult={setCalculationResult} />;
       case 'retirement':
         return <RetirementCalculatorForm onCalculate={calculateGoal} setResult={setCalculationResult} />;
-      case 'hlv':
-        return <HLVCalculatorForm onCalculate={calculateGoal} setResult={setCalculationResult} />;
+      
       default:
         return <SIPCalculatorForm onCalculate={calculateSIP} setResult={setCalculationResult} />;
     }
@@ -615,69 +772,5 @@ const RetirementCalculatorForm = ({ onCalculate, setResult }: any) => {
   );
 };
 
-// HLV Calculator
-const HLVCalculatorForm = ({ onCalculate, setResult }: any) => {
-  const [formData, setFormData] = useState({
-    targetAmount: 5000000,
-    years: 20,
-    annualReturn: 8
-  });
-
-  const handleCalculate = () => {
-    const result = onCalculate(formData.targetAmount, formData.years, formData.annualReturn);
-    setResult(result);
-  };
-
-  return (
-    <div>
-      <h3 className="text-xl font-bold text-[#1a1750] mb-6">Human Life Value Calculator</h3>
-      <p className="text-gray-600 mb-6">Calculate insurance coverage needed for your family's financial security.</p>
-      
-      <div className="space-y-6">
-        <div>
-          <label className="form-label">Insurance Coverage Needed (₹)</label>
-          <input
-            type="number"
-            value={formData.targetAmount}
-            onChange={(e) => setFormData({ ...formData, targetAmount: Number(e.target.value) })}
-            className="form-input"
-            min="500000"
-            step="100000"
-          />
-        </div>
-
-        <div>
-          <label className="form-label">Working Years Remaining</label>
-          <input
-            type="number"
-            value={formData.years}
-            onChange={(e) => setFormData({ ...formData, years: Number(e.target.value) })}
-            className="form-input"
-            min="1"
-            max="40"
-          />
-        </div>
-
-        <div>
-          <label className="form-label">Expected Return on Investment (%)</label>
-          <input
-            type="number"
-            value={formData.annualReturn}
-            onChange={(e) => setFormData({ ...formData, annualReturn: Number(e.target.value) })}
-            className="form-input"
-            min="1"
-            max="20"
-            step="0.5"
-          />
-        </div>
-
-        <button onClick={handleCalculate} className="btn-accent w-full flex justify-center items-center">
-          <Calculator className="w-5 h-5 mr-2" />
-          Calculate HLV Insurance
-        </button>
-      </div>
-    </div>
-  );
-};
 
 export default InvestmentPlanner; 

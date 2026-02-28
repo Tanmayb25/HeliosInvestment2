@@ -80,14 +80,13 @@ const Footer = () => {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <div className="mt-2 text-gray-600">
-              <p>Email: privacy@helios.com</p>
-              <p>Phone: +91 9876543210</p>
-              <p>Address: Mumbai, Maharashtra, India</p>
+              <p>Email: investmentsathelios@gmail.com</p>
+              <p>Address: Pune, Maharashtra, India</p>
             </div>
           </section>
 
           <p className="text-sm text-gray-500 pt-4 border-t border-gray-200">
-            Last updated: January 2024
+            Last updated: January 2025
           </p>
         </div>
       </div>
