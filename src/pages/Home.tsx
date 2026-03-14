@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Target, Eye, Heart, Users, TrendingUp, Shield, Award, CheckCircle, ArrowRight, FileText, BarChart3 } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Target, Eye, Heart, Users, TrendingUp, Shield, Award,  BarChart3 } from 'lucide-react';
 import QuizModal from '../components/QuizModal';
 // Cloudinary URLs for hero slider images
 const life01 = 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516441/life01_nupwtl.jpg';
@@ -21,12 +21,12 @@ const Home = () => {
   const testimonials = [
     {
       name: "Archana Rathod",
-      designation: "Vice President, CitiBank",
+      designation: "Vice President, Financial Services Industry",
       review: "What I value the most is clarity, discipline and transparency in a financial advisor. The advice here is well researched, practical, and aligned with client goals rather than driven by products or commissions. The portfolio approach is structured and focused on long term wealth creation with proper risk management."
     },
     {
       name: "Karishma Shah",
-      designation: "",
+      designation: "Political Scientist",
       review: "A dependable team of professionals who genuinely understands their client's needs and offers thoughtful, well-structured solutions. The approach is disciplined and ethical."
     },
     {

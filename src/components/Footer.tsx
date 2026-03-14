@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, Mail, Phone, MapPin, X, Shield } from 'lucide-react';
+import {  Mail, MapPin, X, Shield } from 'lucide-react';
 // import HeliosLogo from '../assets/HeliosIcon.png';
 // import PlayStoreIcon from '../assets/playstore.png'; // adjust path if needed
 
@@ -70,7 +70,7 @@ const Footer = () => {
             <p className="text-gray-600 leading-relaxed">
               You have the right to access, update, or delete your personal information. 
               You may also opt out of marketing communications at any time. 
-              Contact us at privacy@helios.com for any privacy-related requests.
+              Contact us at investmentsathelios@gmail.com for any privacy-related requests.
             </p>
           </section>
 

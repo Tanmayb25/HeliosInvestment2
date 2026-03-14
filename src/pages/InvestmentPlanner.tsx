@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Calculator, TrendingUp, GraduationCap, Heart, Home, Shield, PiggyBank, BarChart3 } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import  { useState } from 'react';
+import { Calculator, TrendingUp, GraduationCap, Heart, Home, PiggyBank, BarChart3 } from 'lucide-react';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 
 interface CalculationResult {
   monthlyInvestment: number;

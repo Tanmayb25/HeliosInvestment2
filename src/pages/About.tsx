@@ -22,37 +22,37 @@ const nipponLogo  ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v176751655
 const sbiLogo  ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516561/sbi_v7ttr4.webp';
 const utiLogo ='https://res.cloudinary.com/dlfi4zq4f/image/upload/v1767516562/uti_juflay.webp';
 // import AboutUs from '../assets/AboutUsimg.jpg';
-import { Target, Sun, TrendingUp, Award, Mail } from 'lucide-react';
+import { Target, Sun, TrendingUp, Award } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 // const AboutUs= 'https://res.cloudinary.com/dlfi4zq4f/image/upload/v1757994777/AboutUsimg_rxt5vn.jpg';
 const About = () => {
-  const teamMembers = [
-    {
-      name: "Vandita Sanghvi",
-      role: "Co - Founder",
-      experience:"2+ years",
-      expertise: "Portfolio Management, Wealth Planning",
-      image: "",
-      contribution: "Vandita brings a deep understanding of financial planning and investments, with global exposure and strong technical expertise.Vandita represents a new generation of financial advisors who combine global perspectives with a deep understanding of Indian markets.",
-      qualifications: "CFA Level II, BBA in Finance and Economics from FLAME University",
-      linkedin: "#",
-      email: "sanghvivandita8@gmail.com.com"
-    },
+  // const teamMembers = [
+  //   {
+  //     name: "Vandita Sanghvi",
+  //     role: "Co - Founder",
+  //     experience:"2+ years",
+  //     expertise: "Portfolio Management, Wealth Planning",
+  //     image: "",
+  //     contribution: "Vandita brings a deep understanding of financial planning and investments, with global exposure and strong technical expertise.Vandita represents a new generation of financial advisors who combine global perspectives with a deep understanding of Indian markets.",
+  //     qualifications: "CFA Level II, BBA in Finance and Economics from FLAME University",
+  //     linkedin: "#",
+  //     email: "sanghvivandita8@gmail.com.com"
+  //   },
     
-    {
-      name: "Om Balai",
-      role: "Co - Founder",
-      experience: "2+ years",
-      expertise: "Accounting and Audit",
-      image: "",
-      contribution: "Om’s meticulous approach and strong understanding of financial systems provide a solid foundation for building trust and delivering reliable solutions for our clients.",
-      qualifications: "CA Finalist professional",
-      linkedin: "#",
-      email: "ombalai03@gmail.com"
-    },
+  //   {
+  //     name: "Om Balai",
+  //     role: "Co - Founder",
+  //     experience: "2+ years",
+  //     expertise: "Accounting and Audit",
+  //     image: "",
+  //     contribution: "Om’s meticulous approach and strong understanding of financial systems provide a solid foundation for building trust and delivering reliable solutions for our clients.",
+  //     qualifications: "CA Finalist professional",
+  //     linkedin: "#",
+  //     email: "ombalai03@gmail.com"
+  //   },
     
-  ];
+  // ];
 
   const amcLogos = [
     { src: adityaBirlaLogo, alt: 'Aditya Birla Sun Life AMC' },
@@ -67,14 +67,14 @@ const About = () => {
     { src: utiLogo, alt: 'UTI Mutual Fund' },
   ];
 
-  const handleCopy = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    email: string
-  ) => {
-    e.preventDefault();
-    navigator.clipboard.writeText(email);
-    alert("Email copied to clipboard!");
-  };
+  // const handleCopy = (
+  //   e: React.MouseEvent<HTMLAnchorElement>,
+  //   email: string
+  // ) => {
+  //   e.preventDefault();
+  //   navigator.clipboard.writeText(email);
+  //   alert("Email copied to clipboard!");
+  // };
   
   
 
@@ -262,17 +262,31 @@ const About = () => {
       </section>
 
       {/* Our Team Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="max-w-7xl mx-auto container-padding">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Our Expert Team</h2>
-            <p className="section-subtitle">
+      <section className="section-padding bg-gradient-to-br from-[#1a1750] to-[#2a1f70] relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-[#fbb81f]/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-[#fbb81f] rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        
+        <div className="max-w-7xl mx-auto container-padding relative z-10">
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-[#fbb81f]/20 rounded-full mb-5">
+              <Sun className="w-7 h-7 text-[#fbb81f]" />
+            </div>
+            <h2 className="text-2xl md:text-4xl font-bold mb-5 text-white">Our Expert Team</h2>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-5 italic">
             "Your wealth deserves more than just a distributor; it deserves a strategy. We are a team of young financial professionals, dedicated to managing your wealth with the same precision used by institutions. We offer the energy to grow with you and the expertise to guide you." 
             </p>
-            <p className="section-subtitle">ARN NO - 333736</p>
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full">
+                <Award className="w-4 h-4 text-[#fbb81f]" />
+                <span className="text-white font-semibold text-sm">ARN NO - 333736</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className="card p-8 text-center group hover:shadow-strong transition-all duration-300">
                 <div className="relative inline-block mb-6">
@@ -286,22 +300,31 @@ const About = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#1a1750] mb-2">{member.name}</h3>
-                <p className="text-[#fbb81f] font-semibold mb-1">{member.role}</p>
-                <p className="text-gray-600 text-sm mb-4">{member.experience} | {member.expertise}</p>
-                
-                <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.contribution}</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-[#fbb81f]/20 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300">
+                <TrendingUp className="w-7 h-7 text-[#fbb81f]" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Growth Focused</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Our young, dynamic team brings fresh perspectives combined with institutional-grade expertise.
+              </p>
                 </div>
 
-                <div className="text-xs text-gray-500 mb-4">
-                  <strong>Qualifications:</strong> {member.qualifications}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-[#fbb81f]/20 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300">
+                <Award className="w-7 h-7 text-[#fbb81f]" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Certified Experts</h3>
+              <p className="text-gray-300 leading-relaxed">
+                AMFI registered professionals committed to ethical practices and your financial success.
+              </p>
+            </div>
                 </div>
 
                 <div className="flex justify-center space-x-4">
-                  {/* <a href={`mailto:${member.email}`} className="text-[#1a1750] hover:text-[#fbb81f] transition-colors duration-200">
+                   <a href={`mailto:${member.email}`} className="text-[#1a1750] hover:text-[#fbb81f] transition-colors duration-200">
                     <Mail className="w-5 h-5" />
-                  </a> */}
+                  </a> 
                   <a
                     href={`mailto:${member.email}`}
                     onClick={(e) => handleCopy(e, member.email)}
@@ -316,7 +339,7 @@ const About = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
