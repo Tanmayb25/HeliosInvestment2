@@ -1,6 +1,6 @@
 # Helios Investment App
 
-A modern investment planning application with contact forms and financial health quiz functionality. The app consists of a React frontend and a Node.js backend that integrates with Google Sheets.
+A modern investment planning application with contact forms and financial health quiz functionality. The app consists of a React frontend and a Node.js backend that integrates with Google Sheets using Render. I have used Netlify for deployment.
 
 ## 🚀 Quick Start
 
