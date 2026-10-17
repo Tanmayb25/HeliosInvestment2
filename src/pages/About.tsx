@@ -281,7 +281,7 @@ const About = () => {
             </p>
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full">
                 <Award className="w-4 h-4 text-[#fbb81f]" />
-                <span className="text-white font-semibold text-sm">ARN NO - 333736</span>
+                <span className="text-white font-semibold text-sm">ARN NO - 371786</span>
               </div>
             </div>
           </div>
